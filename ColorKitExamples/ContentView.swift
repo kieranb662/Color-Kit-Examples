@@ -7,15 +7,35 @@
 //
 
 import SwiftUI
+import ColorKit
+
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List {
+                Section(header: Text("Color Pickers")) {
+                    NavigationLink("RGB", destination: RGBExample())
+                    NavigationLink("Rectangular HSB", destination: HSBExample())
+                    NavigationLink("Circular HSB", destination: CircularHSBPickerExample())
+                    NavigationLink("CMYK", destination: CMYKExample())
+                    NavigationLink("Gray Scale", destination: GrayscaleExample())
+                    NavigationLink("Alpha", destination: AlphaSliderExample())
+                    NavigationLink("Full Color Picker", destination: ColorPickerExample())
+                }
+                Section(header: Text("Gradient Pickers")) {
+                    NavigationLink("Linear", destination: LinearGradientExample())
+                    NavigationLink("Radial", destination: RadialGradientExample())
+                    NavigationLink("Angular", destination: AngularGradientExample())
+                    NavigationLink("Full Gradient Picker", destination: FullGradientPickerExample())
+                }
+            }.navigationBarTitle("Color Kit")
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().colorScheme(.dark)
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		893FF3052444C23600000662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3042444C23600000662 /* Assets.xcassets */; };
 		893FF3082444C23600000662 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3072444C23600000662 /* Preview Assets.xcassets */; };
 		893FF30B2444C23600000662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3092444C23600000662 /* LaunchScreen.storyboard */; };
+		893FF3172444C62200000662 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 893FF3162444C62200000662 /* ColorKit */; };
+		893FF3192444F69200000662 /* ColorPickerExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF3182444F69200000662 /* ColorPickerExamples.swift */; };
+		893FF31B2444F81F00000662 /* GradientPickerExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31A2444F81F00000662 /* GradientPickerExamples.swift */; };
+		893FF31E2444FEC900000662 /* CircularHSBExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31C2444FEC800000662 /* CircularHSBExample.swift */; };
+		893FF31F2444FEC900000662 /* HueCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31D2444FEC900000662 /* HueCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,10 @@
 		893FF3072444C23600000662 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		893FF30A2444C23600000662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		893FF30C2444C23600000662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893FF3182444F69200000662 /* ColorPickerExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerExamples.swift; sourceTree = "<group>"; };
+		893FF31A2444F81F00000662 /* GradientPickerExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPickerExamples.swift; sourceTree = "<group>"; };
+		893FF31C2444FEC800000662 /* CircularHSBExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularHSBExample.swift; sourceTree = "<group>"; };
+		893FF31D2444FEC900000662 /* HueCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893FF3172444C62200000662 /* ColorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +69,10 @@
 				893FF2FE2444C23400000662 /* AppDelegate.swift */,
 				893FF3002444C23400000662 /* SceneDelegate.swift */,
 				893FF3022444C23400000662 /* ContentView.swift */,
+				893FF31D2444FEC900000662 /* HueCircleView.swift */,
+				893FF31C2444FEC800000662 /* CircularHSBExample.swift */,
+				893FF31A2444F81F00000662 /* GradientPickerExamples.swift */,
+				893FF3182444F69200000662 /* ColorPickerExamples.swift */,
 				893FF3042444C23600000662 /* Assets.xcassets */,
 				893FF3092444C23600000662 /* LaunchScreen.storyboard */,
 				893FF30C2444C23600000662 /* Info.plist */,
@@ -91,6 +105,9 @@
 			dependencies = (
 			);
 			name = ColorKitExamples;
+			packageProductDependencies = (
+				893FF3162444C62200000662 /* ColorKit */,
+			);
 			productName = ColorKitExamples;
 			productReference = 893FF2FB2444C23400000662 /* ColorKitExamples.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 893FF2F22444C23400000662;
+			packageReferences = (
+				893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */,
+			);
 			productRefGroup = 893FF2FC2444C23400000662 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893FF3192444F69200000662 /* ColorPickerExamples.swift in Sources */,
+				893FF31E2444FEC900000662 /* CircularHSBExample.swift in Sources */,
+				893FF31B2444F81F00000662 /* GradientPickerExamples.swift in Sources */,
+				893FF31F2444FEC900000662 /* HueCircleView.swift in Sources */,
 				893FF2FF2444C23400000662 /* AppDelegate.swift in Sources */,
 				893FF3012444C23400000662 /* SceneDelegate.swift in Sources */,
 				893FF3032444C23400000662 /* ContentView.swift in Sources */,
@@ -342,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kieranb662/ColorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		893FF3162444C62200000662 /* ColorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */;
+			productName = ColorKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 893FF2F32444C23400000662 /* Project object */;
 }
