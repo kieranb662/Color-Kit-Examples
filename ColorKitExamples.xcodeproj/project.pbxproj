@@ -18,6 +18,29 @@
 		893FF31E2444FEC900000662 /* CircularHSBExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31C2444FEC800000662 /* CircularHSBExample.swift */; };
 		893FF31F2444FEC900000662 /* HueCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31D2444FEC900000662 /* HueCircleView.swift */; };
 		89B42B0A2445ED81008D8694 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B42B092445ED81008D8694 /* ColorKit */; };
+		89B42B232445EE9A008D8694 /* HueSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0C2445EE9A008D8694 /* HueSlider.png */; };
+		89B42B242445EE9A008D8694 /* RadialComponentBreakDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0D2445EE9A008D8694 /* RadialComponentBreakDown.png */; };
+		89B42B252445EE9A008D8694 /* AngularComponentBreakdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0E2445EE9A008D8694 /* AngularComponentBreakdown.png */; };
+		89B42B262445EE9A008D8694 /* AngularExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0F2445EE9A008D8694 /* AngularExample.png */; };
+		89B42B272445EE9A008D8694 /* SBTrackPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B102445EE9A008D8694 /* SBTrackPad.png */; };
+		89B42B282445EE9A008D8694 /* RectangularHSBColorPicker.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B112445EE9A008D8694 /* RectangularHSBColorPicker.png */; };
+		89B42B292445EE9A008D8694 /* ExampleCollage.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B122445EE9A008D8694 /* ExampleCollage.png */; };
+		89B42B2A2445EE9A008D8694 /* AlphaSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B132445EE9A008D8694 /* AlphaSlider.png */; };
+		89B42B2B2445EE9A008D8694 /* SimpleAngularExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B142445EE9A008D8694 /* SimpleAngularExample.png */; };
+		89B42B2C2445EE9A008D8694 /* GrayScaleExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B152445EE9A008D8694 /* GrayScaleExample.png */; };
+		89B42B2D2445EE9A008D8694 /* SimpleLinearExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B162445EE9A008D8694 /* SimpleLinearExample.png */; };
+		89B42B2E2445EE9A008D8694 /* RGBSliders.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B172445EE9A008D8694 /* RGBSliders.png */; };
+		89B42B2F2445EE9A008D8694 /* CircularHSBPicker.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B182445EE9A008D8694 /* CircularHSBPicker.png */; };
+		89B42B302445EE9A008D8694 /* CMYKPickerExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B192445EE9A008D8694 /* CMYKPickerExample.png */; };
+		89B42B312445EE9A008D8694 /* ColorKitLogo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1A2445EE9A008D8694 /* ColorKitLogo.pdf */; };
+		89B42B322445EE9A008D8694 /* SimpleAngularVerticalExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1B2445EE9A008D8694 /* SimpleAngularVerticalExample.png */; };
+		89B42B332445EE9A008D8694 /* LinearComponentBreakDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1C2445EE9A008D8694 /* LinearComponentBreakDown.png */; };
+		89B42B342445EE9A008D8694 /* SimpleRadialExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1D2445EE9A008D8694 /* SimpleRadialExample.png */; };
+		89B42B352445EE9A008D8694 /* CircularHSBColorPickerExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1E2445EE9A008D8694 /* CircularHSBColorPickerExample.png */; };
+		89B42B362445EE9A008D8694 /* FullGradientPickerThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B1F2445EE9A008D8694 /* FullGradientPickerThumbnail.png */; };
+		89B42B372445EE9A008D8694 /* CMYKSliders.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B202445EE9A008D8694 /* CMYKSliders.png */; };
+		89B42B382445EE9A008D8694 /* RGBColorPicker.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B212445EE9A008D8694 /* RGBColorPicker.png */; };
+		89B42B392445EE9A008D8694 /* ColorKitLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B222445EE9A008D8694 /* ColorKitLogo.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +56,29 @@
 		893FF31A2444F81F00000662 /* GradientPickerExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPickerExamples.swift; sourceTree = "<group>"; };
 		893FF31C2444FEC800000662 /* CircularHSBExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularHSBExample.swift; sourceTree = "<group>"; };
 		893FF31D2444FEC900000662 /* HueCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueCircleView.swift; sourceTree = "<group>"; };
+		89B42B0C2445EE9A008D8694 /* HueSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HueSlider.png; sourceTree = "<group>"; };
+		89B42B0D2445EE9A008D8694 /* RadialComponentBreakDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadialComponentBreakDown.png; sourceTree = "<group>"; };
+		89B42B0E2445EE9A008D8694 /* AngularComponentBreakdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AngularComponentBreakdown.png; sourceTree = "<group>"; };
+		89B42B0F2445EE9A008D8694 /* AngularExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AngularExample.png; sourceTree = "<group>"; };
+		89B42B102445EE9A008D8694 /* SBTrackPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SBTrackPad.png; sourceTree = "<group>"; };
+		89B42B112445EE9A008D8694 /* RectangularHSBColorPicker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RectangularHSBColorPicker.png; sourceTree = "<group>"; };
+		89B42B122445EE9A008D8694 /* ExampleCollage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExampleCollage.png; sourceTree = "<group>"; };
+		89B42B132445EE9A008D8694 /* AlphaSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlphaSlider.png; sourceTree = "<group>"; };
+		89B42B142445EE9A008D8694 /* SimpleAngularExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleAngularExample.png; sourceTree = "<group>"; };
+		89B42B152445EE9A008D8694 /* GrayScaleExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScaleExample.png; sourceTree = "<group>"; };
+		89B42B162445EE9A008D8694 /* SimpleLinearExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleLinearExample.png; sourceTree = "<group>"; };
+		89B42B172445EE9A008D8694 /* RGBSliders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RGBSliders.png; sourceTree = "<group>"; };
+		89B42B182445EE9A008D8694 /* CircularHSBPicker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircularHSBPicker.png; sourceTree = "<group>"; };
+		89B42B192445EE9A008D8694 /* CMYKPickerExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CMYKPickerExample.png; sourceTree = "<group>"; };
+		89B42B1A2445EE9A008D8694 /* ColorKitLogo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ColorKitLogo.pdf; sourceTree = "<group>"; };
+		89B42B1B2445EE9A008D8694 /* SimpleAngularVerticalExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleAngularVerticalExample.png; sourceTree = "<group>"; };
+		89B42B1C2445EE9A008D8694 /* LinearComponentBreakDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LinearComponentBreakDown.png; sourceTree = "<group>"; };
+		89B42B1D2445EE9A008D8694 /* SimpleRadialExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleRadialExample.png; sourceTree = "<group>"; };
+		89B42B1E2445EE9A008D8694 /* CircularHSBColorPickerExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircularHSBColorPickerExample.png; sourceTree = "<group>"; };
+		89B42B1F2445EE9A008D8694 /* FullGradientPickerThumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullGradientPickerThumbnail.png; sourceTree = "<group>"; };
+		89B42B202445EE9A008D8694 /* CMYKSliders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CMYKSliders.png; sourceTree = "<group>"; };
+		89B42B212445EE9A008D8694 /* RGBColorPicker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RGBColorPicker.png; sourceTree = "<group>"; };
+		89B42B222445EE9A008D8694 /* ColorKitLogo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ColorKitLogo.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +96,7 @@
 		893FF2F22444C23400000662 = {
 			isa = PBXGroup;
 			children = (
+				89B42B0B2445EE9A008D8694 /* ColorKitMedia */,
 				893FF2FD2444C23400000662 /* ColorKitExamples */,
 				893FF2FC2444C23400000662 /* Products */,
 			);
@@ -87,6 +134,36 @@
 				893FF3072444C23600000662 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89B42B0B2445EE9A008D8694 /* ColorKitMedia */ = {
+			isa = PBXGroup;
+			children = (
+				89B42B0C2445EE9A008D8694 /* HueSlider.png */,
+				89B42B0D2445EE9A008D8694 /* RadialComponentBreakDown.png */,
+				89B42B0E2445EE9A008D8694 /* AngularComponentBreakdown.png */,
+				89B42B0F2445EE9A008D8694 /* AngularExample.png */,
+				89B42B102445EE9A008D8694 /* SBTrackPad.png */,
+				89B42B112445EE9A008D8694 /* RectangularHSBColorPicker.png */,
+				89B42B122445EE9A008D8694 /* ExampleCollage.png */,
+				89B42B132445EE9A008D8694 /* AlphaSlider.png */,
+				89B42B142445EE9A008D8694 /* SimpleAngularExample.png */,
+				89B42B152445EE9A008D8694 /* GrayScaleExample.png */,
+				89B42B162445EE9A008D8694 /* SimpleLinearExample.png */,
+				89B42B172445EE9A008D8694 /* RGBSliders.png */,
+				89B42B182445EE9A008D8694 /* CircularHSBPicker.png */,
+				89B42B192445EE9A008D8694 /* CMYKPickerExample.png */,
+				89B42B1A2445EE9A008D8694 /* ColorKitLogo.pdf */,
+				89B42B1B2445EE9A008D8694 /* SimpleAngularVerticalExample.png */,
+				89B42B1C2445EE9A008D8694 /* LinearComponentBreakDown.png */,
+				89B42B1D2445EE9A008D8694 /* SimpleRadialExample.png */,
+				89B42B1E2445EE9A008D8694 /* CircularHSBColorPickerExample.png */,
+				89B42B1F2445EE9A008D8694 /* FullGradientPickerThumbnail.png */,
+				89B42B202445EE9A008D8694 /* CMYKSliders.png */,
+				89B42B212445EE9A008D8694 /* RGBColorPicker.png */,
+				89B42B222445EE9A008D8694 /* ColorKitLogo.svg */,
+			);
+			path = ColorKitMedia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +230,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B42B392445EE9A008D8694 /* ColorKitLogo.svg in Resources */,
+				89B42B272445EE9A008D8694 /* SBTrackPad.png in Resources */,
+				89B42B362445EE9A008D8694 /* FullGradientPickerThumbnail.png in Resources */,
 				893FF30B2444C23600000662 /* LaunchScreen.storyboard in Resources */,
+				89B42B232445EE9A008D8694 /* HueSlider.png in Resources */,
+				89B42B372445EE9A008D8694 /* CMYKSliders.png in Resources */,
+				89B42B352445EE9A008D8694 /* CircularHSBColorPickerExample.png in Resources */,
 				893FF3082444C23600000662 /* Preview Assets.xcassets in Resources */,
+				89B42B292445EE9A008D8694 /* ExampleCollage.png in Resources */,
+				89B42B382445EE9A008D8694 /* RGBColorPicker.png in Resources */,
+				89B42B2D2445EE9A008D8694 /* SimpleLinearExample.png in Resources */,
+				89B42B322445EE9A008D8694 /* SimpleAngularVerticalExample.png in Resources */,
+				89B42B302445EE9A008D8694 /* CMYKPickerExample.png in Resources */,
+				89B42B262445EE9A008D8694 /* AngularExample.png in Resources */,
+				89B42B282445EE9A008D8694 /* RectangularHSBColorPicker.png in Resources */,
+				89B42B332445EE9A008D8694 /* LinearComponentBreakDown.png in Resources */,
+				89B42B2F2445EE9A008D8694 /* CircularHSBPicker.png in Resources */,
+				89B42B2B2445EE9A008D8694 /* SimpleAngularExample.png in Resources */,
+				89B42B2A2445EE9A008D8694 /* AlphaSlider.png in Resources */,
+				89B42B312445EE9A008D8694 /* ColorKitLogo.pdf in Resources */,
+				89B42B342445EE9A008D8694 /* SimpleRadialExample.png in Resources */,
+				89B42B242445EE9A008D8694 /* RadialComponentBreakDown.png in Resources */,
+				89B42B2E2445EE9A008D8694 /* RGBSliders.png in Resources */,
+				89B42B252445EE9A008D8694 /* AngularComponentBreakdown.png in Resources */,
 				893FF3052444C23600000662 /* Assets.xcassets in Resources */,
+				89B42B2C2445EE9A008D8694 /* GrayScaleExample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
