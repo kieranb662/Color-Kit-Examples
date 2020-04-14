@@ -82,7 +82,6 @@ struct CMYKExample: View {
             Text("m: \(String(format: "%.0f", color.magenta*100))%")
             Text("y: \(String(format: "%.0f", color.yellow*100))%")
             Text("k: \(String(format: "%.0f", color.keyBlack*100))%")
-            Text(String(color.color.description.dropLast(2)))
         }
     }
     var body: some View {

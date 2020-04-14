@@ -9,9 +9,38 @@
 import SwiftUI
 import ColorKit
 
+
+let gradient1: [GradientData.Stop] = [.init(color: ColorToken(colorSpace: .sRGB, r: 252/255, g: 70/255, b: 107/255, a: 1), location: 0),
+                                      .init(color: ColorToken(colorSpace: .sRGB, r: 63/255, g: 94/255, b: 251/255, a: 1), location: 1)]
+let gradient2: [GradientData.Stop] = [.init(color: ColorToken(colorSpace: .sRGB, r: 63/255, g: 43/255, b: 150/255, a: 1), location: 0),
+                                      .init(color: ColorToken(colorSpace: .sRGB, r: 168/255, g: 192/255, b: 255/255, a: 1), location: 1)]
+let rainbow: [GradientData.Stop] = [.init(color: ColorToken(colorSpace: .sRGB, r: 148/255, g: 0/255, b: 211/255, a: 1), location: 0),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 75/255, g: 0/255, b: 130/255, a: 1), location: 0.16),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 0/255, g: 0/255, b: 255/255, a: 1), location: 0.32),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 0/255, g: 255/255, b: 0/255, a: 1), location: 0.48),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 255/255, g: 255/255, b: 0/255, a: 1), location: 0.65),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 255/255, g: 127/255, b: 0/255, a: 1), location: 0.81),
+                                    .init(color: ColorToken(colorSpace: .sRGB, r: 255/255, g: 0/255, b: 0/255, a: 1), location: 0.97)]
+
 // MARK: - Linear
-struct LinearGradientExample: View {
+
+struct SimpleLinearExample: View {
     @ObservedObject var manager: GradientManager = GradientManager(.defaultValue)
+    var body: some View {
+        ZStack {
+            Color(white: 0.2).edgesIgnoringSafeArea(.all)
+            LinearGradientPicker()
+            .environmentObject(manager)
+                .padding(30)
+        }
+        
+    }
+}
+
+
+
+struct LinearGradientExample: View {
+    @ObservedObject var manager: GradientManager = GradientManager(GradientData(name: "My Gradient", stops: gradient2, startPoint: .leading, endPoint: .trailing))
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
     // If none is selected or if the selection is invalid, then the RGBColorPicker is bound to the
@@ -75,8 +104,22 @@ struct LinearGradientExample: View {
 }
 
 // MARK: - Radial
+struct SimpleRadialExample: View {
+    @ObservedObject var manager: GradientManager = GradientManager(GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100))
+    var body: some View {
+        ZStack {
+            Color(white: 0.2).edgesIgnoringSafeArea(.all)
+            RadialGradientPicker()
+            .environmentObject(manager)
+                .padding(30)
+        }
+    }
+}
+
+
+
 struct RadialGradientExample: View {
-    @ObservedObject var manager: GradientManager = GradientManager(.defaultValue)
+    @ObservedObject var manager: GradientManager = GradientManager(GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100))
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
     // If none is selected or if the selection is invalid, then the RGBColorPicker is bound to the
@@ -140,8 +183,22 @@ struct RadialGradientExample: View {
 }
 
 // MARK: - Angular
+
+
+struct SimpleAngularExample: View {
+    @ObservedObject var manager: GradientManager = GradientManager(GradientData(name: "My Gradient", stops: rainbow, center: .center, startAngle:  0, endAngle: 0.95))
+    var body: some View {
+        ZStack {
+            Color(white: 0.2).edgesIgnoringSafeArea(.all)
+            AngularGradientPicker()
+            .environmentObject(manager)
+                .padding(30)
+        }
+    }
+}
+
 struct AngularGradientExample: View {
-    @ObservedObject var manager: GradientManager = GradientManager(.defaultValue)
+    @ObservedObject var manager: GradientManager = GradientManager(GradientData(name: "My Gradient", stops: rainbow, center: .center, startAngle:  0, endAngle: 0.95))
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
     // If none is selected or if the selection is invalid, then the RGBColorPicker is bound to the

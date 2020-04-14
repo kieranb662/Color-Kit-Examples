@@ -13,11 +13,11 @@
 		893FF3052444C23600000662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3042444C23600000662 /* Assets.xcassets */; };
 		893FF3082444C23600000662 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3072444C23600000662 /* Preview Assets.xcassets */; };
 		893FF30B2444C23600000662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893FF3092444C23600000662 /* LaunchScreen.storyboard */; };
-		893FF3172444C62200000662 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 893FF3162444C62200000662 /* ColorKit */; };
 		893FF3192444F69200000662 /* ColorPickerExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF3182444F69200000662 /* ColorPickerExamples.swift */; };
 		893FF31B2444F81F00000662 /* GradientPickerExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31A2444F81F00000662 /* GradientPickerExamples.swift */; };
 		893FF31E2444FEC900000662 /* CircularHSBExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31C2444FEC800000662 /* CircularHSBExample.swift */; };
 		893FF31F2444FEC900000662 /* HueCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31D2444FEC900000662 /* HueCircleView.swift */; };
+		89B42B0A2445ED81008D8694 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B42B092445ED81008D8694 /* ColorKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893FF3172444C62200000662 /* ColorKit in Frameworks */,
+				89B42B0A2445ED81008D8694 /* ColorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			);
 			name = ColorKitExamples;
 			packageProductDependencies = (
-				893FF3162444C62200000662 /* ColorKit */,
+				89B42B092445ED81008D8694 /* ColorKit */,
 			);
 			productName = ColorKitExamples;
 			productReference = 893FF2FB2444C23400000662 /* ColorKitExamples.app */;
@@ -137,7 +137,7 @@
 			);
 			mainGroup = 893FF2F22444C23400000662;
 			packageReferences = (
-				893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */,
+				89B42B082445ED81008D8694 /* XCRemoteSwiftPackageReference "ColorKit" */,
 			);
 			productRefGroup = 893FF2FC2444C23400000662 /* Products */;
 			projectDirPath = "";
@@ -368,20 +368,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */ = {
+		89B42B082445ED81008D8694 /* XCRemoteSwiftPackageReference "ColorKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kieranb662/ColorKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				minimumVersion = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		893FF3162444C62200000662 /* ColorKit */ = {
+		89B42B092445ED81008D8694 /* ColorKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 893FF3152444C62200000662 /* XCRemoteSwiftPackageReference "ColorKit" */;
+			package = 89B42B082445ED81008D8694 /* XCRemoteSwiftPackageReference "ColorKit" */;
 			productName = ColorKit;
 		};
 /* End XCSwiftPackageProductDependency section */

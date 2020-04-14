@@ -24,8 +24,11 @@ struct ContentView: View {
                     NavigationLink("Full Color Picker", destination: ColorPickerExample())
                 }
                 Section(header: Text("Gradient Pickers")) {
+                    NavigationLink("Simple Linear", destination: SimpleLinearExample())
                     NavigationLink("Linear", destination: LinearGradientExample())
+                    NavigationLink("Simple Radial", destination: SimpleRadialExample())
                     NavigationLink("Radial", destination: RadialGradientExample())
+                    NavigationLink("Simple Angular", destination: SimpleAngularExample())
                     NavigationLink("Angular", destination: AngularGradientExample())
                     NavigationLink("Full Gradient Picker", destination: FullGradientPickerExample())
                 }
