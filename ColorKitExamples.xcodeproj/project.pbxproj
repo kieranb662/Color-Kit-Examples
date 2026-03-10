@@ -14,7 +14,7 @@
 		893FF31B2444F81F00000662 /* GradientPickerExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31A2444F81F00000662 /* GradientPickerExamples.swift */; };
 		893FF31E2444FEC900000662 /* CircularHSBExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31C2444FEC800000662 /* CircularHSBExample.swift */; };
 		893FF31F2444FEC900000662 /* HueCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FF31D2444FEC900000662 /* HueCircleView.swift */; };
-		89B010E12F60CBF50001BCC7 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 89B010E02F60CBF50001BCC7 /* ColorKit */; };
+		897F47C12F60E0C800B2FB03 /* ColorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 897F47C02F60E0C800B2FB03 /* ColorKit */; };
 		89B010E32F60CF510001BCC7 /* ColorKitExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B010E22F60CF510001BCC7 /* ColorKitExamplesApp.swift */; };
 		89B42B232445EE9A008D8694 /* HueSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0C2445EE9A008D8694 /* HueSlider.png */; };
 		89B42B242445EE9A008D8694 /* RadialComponentBreakDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B42B0D2445EE9A008D8694 /* RadialComponentBreakDown.png */; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B010E12F60CBF50001BCC7 /* ColorKit in Frameworks */,
+				897F47C12F60E0C800B2FB03 /* ColorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +177,7 @@
 			);
 			name = ColorKitExamples;
 			packageProductDependencies = (
-				89B010E02F60CBF50001BCC7 /* ColorKit */,
+				897F47C02F60E0C800B2FB03 /* ColorKit */,
 			);
 			productName = ColorKitExamples;
 			productReference = 893FF2FB2444C23400000662 /* ColorKitExamples.app */;
@@ -208,7 +208,7 @@
 			);
 			mainGroup = 893FF2F22444C23400000662;
 			packageReferences = (
-				89B010DF2F60CBF50001BCC7 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */,
+				897F47BF2F60E0C800B2FB03 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */,
 			);
 			productRefGroup = 893FF2FC2444C23400000662 /* Products */;
 			projectDirPath = "";
@@ -451,20 +451,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89B010DF2F60CBF50001BCC7 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */ = {
+		897F47BF2F60E0C800B2FB03 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kieranb662/SwiftUI-Color-Kit.git";
+			repositoryURL = "https://github.com/kieranb662/SwiftUI-Color-Kit";
 			requirement = {
-				branch = "fix-dependencies";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		89B010E02F60CBF50001BCC7 /* ColorKit */ = {
+		897F47C02F60E0C800B2FB03 /* ColorKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89B010DF2F60CBF50001BCC7 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */;
+			package = 897F47BF2F60E0C800B2FB03 /* XCRemoteSwiftPackageReference "SwiftUI-Color-Kit" */;
 			productName = ColorKit;
 		};
 /* End XCSwiftPackageProductDependency section */
