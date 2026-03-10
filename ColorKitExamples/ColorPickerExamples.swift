@@ -1,11 +1,9 @@
+// Swift toolchain version 6.0
+// Running macOS version 26.3
+// Created on 4/13/20.
 //
-//  ColorPickerExamples.swift
-//  ColorKitExamples
+// Author: Kieran Brown
 //
-//  Created by Kieran Brown on 4/13/20.
-//  Copyright © 2020 BrownandSons. All rights reserved.
-//
-
 import SwiftUI
 import ColorKit
 
@@ -25,19 +23,20 @@ struct RGBExample: View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 50) {
                 RoundedRectangle(cornerRadius: 5)
-                .fill(color.color)
+                    .fill(color.color)
                     .background(RoundedRectangle(cornerRadius: 5).stroke(Color.white, lineWidth: 2))
                     .shadow(radius: 3)
                     .aspectRatio(1, contentMode: .fit)
-                .overlay(overlay)
+                    .overlay(overlay)
+                
                 RGBColorPicker($color)
             }
-            
             .padding(40)
-        }.navigationBarTitle("RGB")
-        
+        }
+        .navigationTitle("RGB")
     }
 }
 
@@ -53,10 +52,12 @@ struct HSBExample: View {
             Text(String(color.color.description.dropLast(2)))
         }
     }
+    
     var body: some View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(color.color)
@@ -64,11 +65,12 @@ struct HSBExample: View {
                     .shadow(radius: 3)
                     .aspectRatio(1, contentMode: .fit)
                     .overlay(overlay)
+                
                 HSBColorPicker($color)
             }
-                .padding(40)
-        }.navigationBarTitle("HSB")
-        
+            .padding(40)
+        }
+        .navigationTitle("HSB")
     }
 }
 
@@ -76,6 +78,7 @@ struct HSBExample: View {
 
 struct CMYKExample: View {
     @State var color: ColorToken = ColorToken(cyan: 0.5, magenta: 0.5, yellow: 0.5, keyBlack: 0.5)
+    
     var overlay: some View {
         VStack {
             Text("c: \(String(format: "%.0f", color.cyan*100))%")
@@ -88,18 +91,20 @@ struct CMYKExample: View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 50) {
                 RoundedRectangle(cornerRadius: 5)
-                .fill(color.color)
+                    .fill(color.color)
                     .background(RoundedRectangle(cornerRadius: 5).stroke(Color.white, lineWidth: 2))
                     .shadow(radius: 3)
                     .aspectRatio(1, contentMode: .fit)
-                .overlay(overlay)
+                    .overlay(overlay)
+                
                 CMYKColorPicker($color)
             }
-             .padding(40)
-        }.navigationBarTitle("CMYK")
-        
+            .padding(40)
+        }
+        .navigationTitle("CMYK")
     }
 }
 
@@ -117,19 +122,21 @@ struct GrayscaleExample: View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack {
                 RoundedRectangle(cornerRadius: 5)
-                .fill(color.color)
+                    .fill(color.color)
                     .background(RoundedRectangle(cornerRadius: 5).stroke(Color.white, lineWidth: 2))
                     .shadow(radius: 3)
                     .aspectRatio(1, contentMode: .fit)
-                .overlay(overlay)
+                    .overlay(overlay)
+                
                 GrayScaleSlider($color)
-                .frame(height: 40)
+                    .frame(height: 40)
             }
-             .padding(40)
-        }.navigationBarTitle("Gray Scale")
-        
+            .padding(40)
+        }
+        .navigationTitle("Gray Scale")
     }
 }
 
@@ -141,11 +148,12 @@ struct AlphaSliderExample: View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             AlphaSlider($color)
                 .frame(height: 40)
-             .padding(40)
-        }.navigationBarTitle("Alpha Slider")
-        
+                .padding(40)
+        }
+        .navigationTitle("Alpha Slider")
     }
 }
 
@@ -153,13 +161,15 @@ struct AlphaSliderExample: View {
 
 struct ColorPickerExample: View {
     @ObservedObject var manager: ColorManager = ColorManager(colors: [ColorToken(hue: 0.3, saturation: 0.5, brightness: 0.5)])
+    
     var body: some View {
         ZStack {
             Color(white: 0.2)
                 .edgesIgnoringSafeArea(.all)
+            
             ColorPicker(_manager)
-        }.navigationBarTitle("Color Picker")
-      
+        }
+        .navigationTitle("Color Picker")
     }
 }
 

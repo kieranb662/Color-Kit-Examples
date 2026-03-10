@@ -1,14 +1,12 @@
+// Swift toolchain version 6.0
+// Running macOS version 26.3
+// Created on 4/13/20.
 //
-//  ContentView.swift
-//  ColorKitExamples
-//
-//  Created by Kieran Brown on 4/13/20.
-//  Copyright © 2020 BrownandSons. All rights reserved.
+// Author: Kieran Brown
 //
 
 import SwiftUI
 import ColorKit
-
 
 struct ContentView: View {
     var body: some View {
@@ -23,6 +21,7 @@ struct ContentView: View {
                     NavigationLink("Alpha", destination: AlphaSliderExample())
                     NavigationLink("Full Color Picker", destination: ColorPickerExample())
                 }
+                
                 Section(header: Text("Gradient Pickers")) {
                     NavigationLink("Simple Linear", destination: SimpleLinearExample())
                     NavigationLink("Linear", destination: LinearGradientExample())
@@ -32,13 +31,15 @@ struct ContentView: View {
                     NavigationLink("Angular", destination: AngularGradientExample())
                     NavigationLink("Full Gradient Picker", destination: FullGradientPickerExample())
                 }
-            }.navigationBarTitle("Color Kit")
+            }
+            .navigationTitle("Color Kit")
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().colorScheme(.dark)
+        ContentView()
+            .colorScheme(.dark)
     }
 }

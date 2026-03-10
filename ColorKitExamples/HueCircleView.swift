@@ -1,17 +1,13 @@
+// Swift toolchain version 6.0
+// Running macOS version 26.3
+// Created on 4/8/20.
 //
-//  HueCircleView.swift
-//  MyExamples
-//
-//  Created by Kieran Brown on 4/8/20.
-//  Copyright © 2020 BrownandSons. All rights reserved.
+// Author: Kieran Brown
 //
 
 import SwiftUI
-import UIKit
 import simd
 import MetalKit
-
-
 
 let shader = """
                     #include <metal_stdlib>
@@ -44,14 +40,12 @@ let shader = """
 
 // FIXME: Shader Library needs to be created with the color picker
 public class MetalView: NSObject, MTKViewDelegate {
-    
     public var device: MTLDevice!
     var queue: MTLCommandQueue!
     var vertexBuffer: MTLBuffer!
     var uniformBuffer: MTLBuffer!
     var rps: MTLRenderPipelineState!
     var vertexData: [Vertex] = []
-
     
     override public init() {
         super.init()
@@ -109,15 +103,12 @@ public class MetalView: NSObject, MTKViewDelegate {
             }
         }
         self.vertexData = vertices
-        
     }
     
     func createBuffers() {
         device = MTLCreateSystemDefaultDevice()
         queue = device.makeCommandQueue()
-        self.createVertexPoints()
-        
-        
+        createVertexPoints()
         vertexBuffer = device!.makeBuffer(bytes: vertexData, length: MemoryLayout<Vertex>.size * vertexData.count , options:[])
         uniformBuffer = device!.makeBuffer(length: MemoryLayout<Float>.size * 16, options: [])
         let bufferPointer = uniformBuffer.contents()
@@ -126,7 +117,7 @@ public class MetalView: NSObject, MTKViewDelegate {
     
     func registerShaders() {
         let input: String?
-
+        
         do {
             input = shader
             let library = try device.makeLibrary(source: input!, options: nil)
@@ -169,6 +160,7 @@ struct Vertex {
         color = col
     }
 }
+
 struct Matrix {
     var m: [Float]
     
@@ -188,14 +180,12 @@ struct Matrix {
         matrix.m[15] = 1.0
         return matrix
     }
-    
 }
 
 struct HueCircleMetalView: UIViewRepresentable {
-    typealias UIViewType = MTKView
     var size: CGSize
- 
     var delegate: MetalView
+    
     init(_ size: CGSize) {
         self.size = size
         self.delegate = MetalView()
@@ -204,24 +194,22 @@ struct HueCircleMetalView: UIViewRepresentable {
     func makeUIView(context: Context) -> MTKView {
         let view = MTKView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height), device: delegate.device)
         view.delegate = delegate
-       
+        
         return view
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    func updateUIView(_ uiView: MTKView, context: Context) {
         uiView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         print("updated")
-        
     }
 }
-
 
 struct HueCircleView: View {
     var body: some View {
         ZStack {
             GeometryReader { proxy in
                 HueCircleMetalView(proxy.size)
-                .mask(Circle())
+                    .mask(Circle())
             }
         }
     }
@@ -229,6 +217,7 @@ struct HueCircleView: View {
 
 struct HueCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        HueCircleView().frame(width: 300, height: 300)
+        HueCircleView()
+            .frame(width: 300, height: 300)
     }
 }
