@@ -11,6 +11,7 @@ import ColorKit
 
 struct RGBExample: View {
     @State var color: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.5, b: 0.8)
+    
     var overlay: some View {
         VStack {
             Text("r: \(String(format: "%.0f", color.red*255))")
@@ -19,6 +20,7 @@ struct RGBExample: View {
             Text(String(color.color.description.dropLast(2)))
         }
     }
+    
     var body: some View {
         ZStack {
             Color(white: 0.2)
@@ -44,6 +46,7 @@ struct RGBExample: View {
 
 struct HSBExample: View {
     @State var color: ColorToken = ColorToken(hue: 0.2, saturation: 0.5, brightness: 0.5)
+    
     var overlay: some View {
         VStack {
             Text("h: \(String(format: "%.0f", color.hue*360))")
@@ -87,6 +90,7 @@ struct CMYKExample: View {
             Text("k: \(String(format: "%.0f", color.keyBlack*100))%")
         }
     }
+    
     var body: some View {
         ZStack {
             Color(white: 0.2)
@@ -112,12 +116,15 @@ struct CMYKExample: View {
 
 struct GrayscaleExample: View {
     @State var color: ColorToken = ColorToken(white: 0.3)
+    
     var overlay: some View {
         VStack {
             Text("white: \(String(format: "%.0f", color.white*100))%")
             Text(String(color.color.description.dropLast(2)))
-        }.foregroundColor(color.white > 0.5 ? Color.black : Color.white)
+        }
+        .foregroundColor(color.white > 0.5 ? Color.black : Color.white)
     }
+    
     var body: some View {
         ZStack {
             Color(white: 0.2)

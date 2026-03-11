@@ -53,6 +53,7 @@ struct BrightnessSliderStyle: LSliderStyle {
         ZStack {
             Pentagon()
                 .fill(color.color)
+            
             Pentagon()
                 .stroke(Color.white, style: .init(lineWidth: 3, lineJoin: .round))
         }
@@ -65,7 +66,10 @@ struct BrightnessSliderStyle: LSliderStyle {
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(
-                        LinearGradient(gradient: self.gradient, startPoint: .leading, endPoint: .trailing)
+                        LinearGradient(
+                            gradient: gradient,
+                            startPoint: .leading,
+                            endPoint: .trailing)
                     )
                 
                 RoundedRectangle(cornerRadius: 5)
@@ -85,18 +89,17 @@ struct SaturationHueRadialPad: RadialPadStyle {
     }
     
     func makeThumb(configuration: RadialPadConfiguration) -> some View {
-        let color = Color(hue: (configuration.angle.degrees/360),
-                          saturation: configuration.radialOffset,
-                          brightness: self.brightness)
-        
         return ZStack {
             Circle()
                 .fill(Color.white)
             
-            
             Circle()
                 .inset(by: 6)
-                .fill(color)
+                .fill(Color(
+                    hue: (configuration.angle.degrees/360),
+                            saturation: configuration.radialOffset,
+                            brightness: brightness)
+                )
         }
         .frame(width: 45, height: 45)
     }
@@ -104,7 +107,7 @@ struct SaturationHueRadialPad: RadialPadStyle {
     func makeTrack(configuration: RadialPadConfiguration) -> some View {
         ZStack {
             Circle()
-                .fill(Color(hue: 0, saturation: 0, brightness: self.brightness))
+                .fill(Color(hue: 0, saturation: 0, brightness: brightness))
             
             HueCircleView()
                 .blendMode(.plusDarker)
@@ -138,14 +141,22 @@ struct CircularHSBColorPicker: View {
                 .overlay(overlay)
             
             RadialPad(
-                offset: Binding(get: {self.color.saturation}, set: {self.color = self.color.update(saturation: $0)}),
-                angle: Binding(get: { Angle(degrees: self.color.hue*360) }, set: { self.color = self.color.update(hue: $0.degrees/360) })
+                offset: Binding(
+                    get: { color.saturation },
+                    set: { color = color.update(saturation: $0) }),
+                angle: Binding(
+                    get: { Angle(degrees: color.hue*360) },
+                    set: { color = color.update(hue: $0.degrees/360) })
             )
             .radialPadStyle(SaturationHueRadialPad(brightness: color.brightness))
             
-            LSlider(Binding(get: {self.color.brightness}, set: {self.color = self.color.update(brightness: $0)}))
-                .linearSliderStyle(BrightnessSliderStyle(color: color, strokeWidth: sliderHeight))
-                .frame(height: sliderHeight)
+            LSlider(
+                Binding(
+                    get: { color.brightness },
+                    set: { color = color.update(brightness: $0) })
+            )
+            .linearSliderStyle(BrightnessSliderStyle(color: color, strokeWidth: sliderHeight))
+            .frame(height: sliderHeight)
         }
     }
 }

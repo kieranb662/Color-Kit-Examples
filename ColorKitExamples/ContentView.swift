@@ -10,7 +10,7 @@ import ColorKit
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section(header: Text("Color Pickers")) {
                     NavigationLink("RGB", destination: RGBExample())

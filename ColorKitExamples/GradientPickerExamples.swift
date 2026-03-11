@@ -42,7 +42,9 @@ struct SimpleLinearExample: View {
 }
 
 struct LinearGradientExample: View {
-    @ObservedObject var manager = GradientManager(GradientData(name: "My Gradient", stops: gradient2, startPoint: .leading, endPoint: .trailing))
+    @ObservedObject var manager = GradientManager(
+        GradientData(name: "My Gradient", stops: gradient2, startPoint: .leading, endPoint: .trailing)
+    )
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     
     // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
@@ -50,35 +52,36 @@ struct LinearGradientExample: View {
     // default color
     var selectedColor: Binding<ColorToken> {
         Binding(get: {
-            guard let selected = self.manager.selected else { return self.defaultColor }
-            guard let color = self.manager.gradient.stops.first(where: {$0.color.id == selected}) else { return self.defaultColor }
+            guard let selected = manager.selected,
+                  let color = manager.gradient.stops.first(where: { $0.color.id == selected })
+            else { return defaultColor }
+            
             return color.color
         }) { newValue in
-            guard let selected = self.manager.selected else {
-                self.defaultColor = newValue
+            guard let selected = manager.selected,
+                  let stop = manager.gradient.stops.enumerated().first(where: { $0.element.id == selected })
+            else {
+                defaultColor = newValue
                 return
             }
-            guard let stop = self.manager.gradient.stops.enumerated().first(where: {$0.element.id == selected}) else {
-                self.defaultColor = newValue
-                return
-            }
-            self.manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
+  
+            manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
         }
     }
     
     func add() {
-        let newColor = ColorToken(self.selectedColor.wrappedValue)
-        self.manager.gradient.stops.append(.init(color: newColor, location: 0.5))
+        let newColor = ColorToken(selectedColor.wrappedValue)
+        manager.gradient.stops.append(.init(color: newColor, location: 0.5))
     }
     
     func delete() {
-        guard let selected = self.manager.selected  else { return }
-        if self.manager.gradient.stops.count > 1 {
-            self.manager.selected = nil
-            let new = self.manager.gradient.stops.filter({$0.id != selected})
-            
-            self.manager.gradient.stops = new
-        }
+        guard let selected = manager.selected,
+              manager.gradient.stops.count > 1
+        else { return }
+        
+        manager.selected = nil
+        let new = manager.gradient.stops.filter({$0.id != selected})
+        manager.gradient.stops = new
     }
     
     var body: some View {
@@ -110,13 +113,14 @@ struct LinearGradientExample: View {
             .padding(40)
         }
         .navigationTitle("Linear Gradient Picker")
-        
     }
 }
 
 // MARK: - Radial
 struct SimpleRadialExample: View {
-    @ObservedObject var manager = GradientManager(GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100))
+    @ObservedObject var manager = GradientManager(
+        GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100)
+    )
     
     var body: some View {
         ZStack {
@@ -131,7 +135,9 @@ struct SimpleRadialExample: View {
 }
 
 struct RadialGradientExample: View {
-    @ObservedObject var manager = GradientManager(GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100))
+    @ObservedObject var manager = GradientManager(
+        GradientData(name: "My Gradient", stops: gradient1, center: .center, startRadius: 0, endRadius: 100)
+    )
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     
     // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
@@ -139,35 +145,38 @@ struct RadialGradientExample: View {
     // default color
     var selectedColor: Binding<ColorToken> {
         Binding(get: {
-            guard let selected = self.manager.selected else { return self.defaultColor }
-            guard let color = self.manager.gradient.stops.first(where: {$0.color.id == selected}) else { return self.defaultColor }
+            guard let selected = manager.selected,
+                  let color = manager.gradient.stops.first(where: { $0.color.id == selected })
+            else {
+                return defaultColor
+            }
+            
             return color.color
         }) { newValue in
-            guard let selected = self.manager.selected else {
-                self.defaultColor = newValue
+            guard let selected = manager.selected,
+                  let stop = manager.gradient.stops.enumerated().first(where: { $0.element.id == selected })
+            else {
+                defaultColor = newValue
                 return
             }
-            guard let stop = self.manager.gradient.stops.enumerated().first(where: {$0.element.id == selected}) else {
-                self.defaultColor = newValue
-                return
-            }
-            self.manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
+ 
+            manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
         }
     }
     
     func add() {
-        let newColor = ColorToken(self.selectedColor.wrappedValue)
-        self.manager.gradient.stops.append(.init(color: newColor, location: 0.5))
+        let newColor = ColorToken(selectedColor.wrappedValue)
+        manager.gradient.stops.append(.init(color: newColor, location: 0.5))
     }
     
     func delete() {
-        guard let selected = self.manager.selected  else { return }
-        if self.manager.gradient.stops.count > 1 {
-            self.manager.selected = nil
-            let new = self.manager.gradient.stops.filter({$0.id != selected})
-            
-            self.manager.gradient.stops = new
-        }
+        guard let selected = manager.selected,
+              manager.gradient.stops.count > 1
+        else { return }
+        
+        manager.selected = nil
+        let new = manager.gradient.stops.filter({$0.id != selected})
+        manager.gradient.stops = new
     }
     
     var body: some View {
@@ -233,40 +242,49 @@ struct AngularGradientExample: View {
     )
     @State var defaultColor: ColorToken = ColorToken(colorSpace: .sRGB, r: 0.2, g: 0.2, b: 0.4)
     
-    // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
-    // If none is selected or if the selection is invalid, then the RGBColorPicker is bound to the
-    // default color
     var selectedColor: Binding<ColorToken> {
-        Binding(get: {
-            guard let selected = self.manager.selected else { return self.defaultColor }
-            guard let color = self.manager.gradient.stops.first(where: {$0.color.id == selected}) else { return self.defaultColor }
-            return color.color
-        }) { newValue in
-            guard let selected = self.manager.selected else {
-                self.defaultColor = newValue
-                return
+        // Here I make a custom binding inorder to handle whether a gradient stop is selected or not
+        // If none is selected or if the selection is invalid, then the RGBColorPicker is bound to the
+        // default color
+        return Binding(
+            get: {
+                guard let selected = manager.selected,
+                      let color = manager.gradient.stops.first(where: { $0.color.id == selected })
+                else {
+                    return defaultColor
+                }
+                
+                return color.color
+                
+            },
+            set: { newValue in
+                guard let selected = manager.selected,
+                      let stop = manager.gradient.stops.enumerated().first(where: { $0.element.id == selected })
+                else {
+                    defaultColor = newValue
+                    return
+                }
+                
+                manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
             }
-            guard let stop = self.manager.gradient.stops.enumerated().first(where: {$0.element.id == selected}) else {
-                self.defaultColor = newValue
-                return
-            }
-            self.manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
-        }
+        )
     }
     
     func add() {
-        let newColor = ColorToken(self.selectedColor.wrappedValue)
-        self.manager.gradient.stops.append(.init(color: newColor, location: 0.5))
+        let newColor = ColorToken(selectedColor.wrappedValue)
+        manager.gradient.stops.append(.init(color: newColor, location: 0.5))
     }
     
     func delete() {
-        guard let selected = self.manager.selected  else { return }
-        if self.manager.gradient.stops.count > 1 {
-            self.manager.selected = nil
-            let new = self.manager.gradient.stops.filter({$0.id != selected})
-            
-            self.manager.gradient.stops = new
+        guard let selected = manager.selected,
+              manager.gradient.stops.count > 1
+        else {
+            return
         }
+        
+        manager.selected = nil
+        let new = manager.gradient.stops.filter({$0.id != selected})
+        manager.gradient.stops = new
     }
     
     var body: some View {
@@ -312,35 +330,39 @@ struct FullGradientPickerExample: View {
     // default color
     var selectedColor: Binding<ColorToken> {
         Binding(get: {
-            guard let selected = self.manager.selected else { return self.defaultColor }
-            guard let color = self.manager.gradient.stops.first(where: {$0.color.id == selected}) else { return self.defaultColor }
+            guard let selected = manager.selected,
+                  let color = manager.gradient.stops.first(where: { $0.color.id == selected })
+            else {
+                return defaultColor
+            }
+            
             return color.color
+            
         }) { newValue in
-            guard let selected = self.manager.selected else {
-                self.defaultColor = newValue
+            guard let selected = manager.selected,
+                  let stop = manager.gradient.stops.enumerated().first(where: { $0.element.id == selected })
+            else {
+                defaultColor = newValue
                 return
             }
-            guard let stop = self.manager.gradient.stops.enumerated().first(where: {$0.element.id == selected}) else {
-                self.defaultColor = newValue
-                return
-            }
-            self.manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
+            
+            manager.gradient.stops[stop.offset] = .init(color: newValue, location: stop.element.location)
         }
     }
     
     func add() {
-        let newColor = ColorToken(self.selectedColor.wrappedValue)
-        self.manager.gradient.stops.append(.init(color: newColor, location: 0.5))
+        let newColor = ColorToken(selectedColor.wrappedValue)
+        manager.gradient.stops.append(.init(color: newColor, location: 0.5))
     }
     
     func delete() {
-        guard let selected = self.manager.selected  else { return }
-        if self.manager.gradient.stops.count > 1 {
-            self.manager.selected = nil
-            let new = self.manager.gradient.stops.filter({$0.id != selected})
-            
-            self.manager.gradient.stops = new
-        }
+        guard let selected = manager.selected,
+              manager.gradient.stops.count > 1
+        else { return }
+        
+        manager.selected = nil
+        let new = manager.gradient.stops.filter({ $0.id != selected })
+        manager.gradient.stops = new
     }
     
     var body: some View {
